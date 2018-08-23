@@ -1,0 +1,22 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.zn.springbootdemo.config.Config",
+      "name": "general",
+      "type": "com.zn.springbootdemo.config.Config"
+    },
+    {
+      "sourceType": "com.zn.springbootdemo.config.Config",
+      "name": "general",
+      "type": "com.zn.springbootdemo.config.Config"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.zn.springbootdemo.config.Config",
+      "name": "general.redis-expiration",
+      "type": "java.lang.String"
+    }
+  ]
+}
