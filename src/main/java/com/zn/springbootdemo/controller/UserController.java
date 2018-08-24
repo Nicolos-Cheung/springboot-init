@@ -9,12 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import java.util.Date;
 
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/mybatisuser")
 public class UserController {
 
 
@@ -28,7 +27,7 @@ public class UserController {
     /**
      * 功能描述: user 保存接口
      *
-     * @return
+     * @return json
      */
     @GetMapping("add")
     public Object add() {
@@ -56,13 +55,13 @@ public class UserController {
     }
 
 
-    @GetMapping("find_by_id")
+    @GetMapping("findbyid")
     public Object findById(long id) {
         return JsonData.buildSuccess(userMapper.findById(id));
     }
 
 
-    @GetMapping("del_by_id")
+    @GetMapping("delbyid")
     public Object delById(long id) {
         userMapper.delete(id);
         return JsonData.buildSuccess();

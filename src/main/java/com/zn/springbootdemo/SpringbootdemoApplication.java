@@ -7,6 +7,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jms.annotation.EnableJms;
 import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
 import org.springframework.jms.config.JmsListenerContainerFactory;
@@ -27,6 +28,7 @@ import javax.jms.Topic;
 @EnableAsync //开启异步任务
 @EnableJms //开启支持jms
 @EnableSwagger2 //开启swagger2
+@EnableJpaRepositories("com.zn.springbootdemo.jpa") //扫描该包下数据访问层所在包下的数据访问接口定义
 public class SpringbootdemoApplication {
 
     @Bean //非常规写法，交给spring管理，只是为了后期测试方便直接注入该Queue对象
