@@ -1,5 +1,6 @@
-package com.zn.springbootdemo.interceptor;
+package com.zn.springbootdemo.config;
 
+import com.zn.springbootdemo.interceptor.LoginIntercepter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -12,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * SpringBoot2.x之前需要继承WebMvcConfigurationAdapter
  */
 @Configuration
-public class InterceptorConfig implements WebMvcConfigurer {
+public class CustomerWebMvcConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {

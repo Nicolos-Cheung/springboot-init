@@ -5,8 +5,10 @@ import org.apache.activemq.command.ActiveMQTopic;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.data.rest.RepositoryRestMvcAutoConfiguration;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Import;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jms.annotation.EnableJms;
 import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
@@ -20,15 +22,16 @@ import javax.jms.ConnectionFactory;
 import javax.jms.Queue;
 import javax.jms.Topic;
 
-@EnableTransactionManagement
-@SpringBootApplication()
+@EnableTransactionManagement  //开启声明式事务支持
+@SpringBootApplication() //scanBasePackages = ""
 @ServletComponentScan(basePackages = "com.zn.springbootdemo.web") //传统serlvet方式，扫描servlet、filter
 @MapperScan("com.zn.springbootdemo.mapper")
 @EnableScheduling  //开启定时任务
 @EnableAsync //开启异步任务
 @EnableJms //开启支持jms
 @EnableSwagger2 //开启swagger2
-@EnableJpaRepositories("com.zn.springbootdemo.jpa") //扫描该包下数据访问层所在包下的数据访问接口定义
+@EnableJpaRepositories(basePackages = "com.zn.springbootdemo.data") //扫描该包数据访问接口定义（jpa rest）
+@Import(RepositoryRestMvcAutoConfiguration.class) //导入默认的Spring-data-Rest配置
 public class SpringbootdemoApplication {
 
     @Bean //非常规写法，交给spring管理，只是为了后期测试方便直接注入该Queue对象

@@ -1,4 +1,4 @@
-package com.zn.springbootdemo.jpa;
+package com.zn.springbootdemo.data.jpa;
 
 import lombok.Data;
 

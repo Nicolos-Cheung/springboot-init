@@ -1,8 +1,8 @@
 package com.zn.springbootdemo.controller;
 
 import com.zn.springbootdemo.domain.JsonData;
-import com.zn.springbootdemo.jpa.JPATestRepostitory;
-import com.zn.springbootdemo.jpa.JpaBean;
+import com.zn.springbootdemo.data.jpa.JPATestRepostitory;
+import com.zn.springbootdemo.data.jpa.JpaBean;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
