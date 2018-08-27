@@ -7,6 +7,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.data.rest.RepositoryRestMvcAutoConfiguration;
 import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -15,14 +16,13 @@ import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
 import org.springframework.jms.config.JmsListenerContainerFactory;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import javax.jms.ConnectionFactory;
 import javax.jms.Queue;
 import javax.jms.Topic;
 
-@EnableTransactionManagement  //开启声明式事务支持
+//@EnableTransactionManagement  //开启声明式事务支持--默认已开启
 @SpringBootApplication() //scanBasePackages = ""
 @ServletComponentScan(basePackages = "com.zn.springbootdemo.web") //传统serlvet方式，扫描servlet、filter
 @MapperScan("com.zn.springbootdemo.mapper")
@@ -32,6 +32,7 @@ import javax.jms.Topic;
 @EnableSwagger2 //开启swagger2
 @EnableJpaRepositories(basePackages = "com.zn.springbootdemo.data") //扫描该包数据访问接口定义（jpa rest）
 @Import(RepositoryRestMvcAutoConfiguration.class) //导入默认的Spring-data-Rest配置
+@EnableCaching //开启声明式缓存支持
 public class SpringbootdemoApplication {
 
     @Bean //非常规写法，交给spring管理，只是为了后期测试方便直接注入该Queue对象

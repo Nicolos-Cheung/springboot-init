@@ -7,7 +7,7 @@ import org.springframework.data.rest.core.annotation.RestResource;
  * Created by ning on 24/8/18.
  */
 
-//@RepositoryRestResource(path = "rest")
+//@RepositoryRestResource(path = "rest") ->可在properties中配置全局的path
 public interface RestTestRepostitory extends JpaRepository<RestTestBean, Long> {
 
     /**

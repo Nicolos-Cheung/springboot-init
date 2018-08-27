@@ -28,7 +28,7 @@ public class GetController {
 
         //service.queryPerson(user_id)
         int i = 1 / 0;
-        return new Person(user_id, "123", new Date());
+        return new Person(user_id, "123", "1234567890", new Date());
 
     }
 
@@ -41,7 +41,7 @@ public class GetController {
     public Object findPerson2(@PathVariable("user_id") String user_id) {
 
         //service.queryPerson(user_id)
-        return new Person(user_id, "123", new Date());
+        return new Person(user_id, "123", "1234567890", new Date());
 
     }
 
@@ -51,7 +51,7 @@ public class GetController {
     @GetMapping(path = "/user")
     public Object findPerson3(@RequestParam(name = "user_id") String user_id) {
 
-        return new Person(user_id, "123", new Date());
+        return new Person(user_id, "123", "1234567890", new Date());
 
     }
 
@@ -63,8 +63,8 @@ public class GetController {
      * @return
      */
     @PostMapping("/user")
-    public void savePerson(@RequestBody Person person) {
-        System.out.println(person.toString());
+    public Person savePerson(@RequestBody Person person) {
+        return person;
     }
 
 

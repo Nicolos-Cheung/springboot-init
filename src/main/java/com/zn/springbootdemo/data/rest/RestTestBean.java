@@ -1,5 +1,7 @@
 package com.zn.springbootdemo.data.rest;
 
+import lombok.Data;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,6 +13,7 @@ import javax.persistence.Id;
  * Spring data Rest测试相关bean
  */
 @Entity
+@Data
 public class RestTestBean {
 
     @Id  //主键
@@ -20,30 +23,6 @@ public class RestTestBean {
     private String caseName;
 
     private String tag;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getCaseName() {
-        return caseName;
-    }
-
-    public void setCaseName(String caseName) {
-        this.caseName = caseName;
-    }
-
-    public String getTag() {
-        return tag;
-    }
-
-    public void setTag(String tag) {
-        this.tag = tag;
-    }
 
     public RestTestBean() {
         super();

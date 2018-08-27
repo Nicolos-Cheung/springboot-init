@@ -29,10 +29,21 @@ public class Person {
     @JsonInclude(JsonInclude.Include.NON_NULL) //null字段不封装到json
     private String desc;
 
-    public Person(String username, String password, Date createTime) {
+    public Person(){
+
+    }
+
+    public Person(String username, String password, String phone, Date createTime) {
         this.username = username;
+        this.phone = phone;
         this.password = password;
         this.createTime = createTime;
+    }
+
+    public Person(String username, String phone, String password) {
+        this.username = username;
+        this.phone = phone;
+        this.password = password;
     }
 
     @Override
