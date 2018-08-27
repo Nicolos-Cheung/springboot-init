@@ -21,6 +21,7 @@ import java.util.Date;
  */
 @RestController
 @Api(value = "RESTFUL协议测试服务", description = "RESTFUL协议测试服务")
+@RequestMapping("rest")
 public class GetController {
 
     @RequestMapping(path = "/user/{user_id}", method = RequestMethod.GET)
@@ -63,7 +64,8 @@ public class GetController {
      * @return
      */
     @PostMapping("/user")
-    public Person savePerson(@RequestBody Person person) {
+    public Person savePerson(@RequestBody  Person person) {
+        person.setCreateTime(new Date());
         return person;
     }
 

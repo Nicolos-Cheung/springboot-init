@@ -4,6 +4,7 @@
 #Springboot整合列表总览:
  * Swagger2
  * LogBack
+ * cron定时任务
  * Mybatis
  * Redis
  * ActiveMQ
