@@ -35,7 +35,7 @@ import javax.jms.Topic;
 @EnableCaching //开启声明式缓存支持
 public class SpringbootdemoApplication {
 
-    @Bean //非常规写法，交给spring管理，只是为了后期测试方便直接注入该Queue对象
+    @Bean //非 常规写法，交给spring管理，只是为了后期测试方便直接注入该Queue对象
     public Queue queue() {
         return new ActiveMQQueue("common.queue");
     }

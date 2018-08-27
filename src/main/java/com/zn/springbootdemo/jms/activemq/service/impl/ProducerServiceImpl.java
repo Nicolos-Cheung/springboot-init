@@ -19,7 +19,7 @@ public class ProducerServiceImpl implements ProducerService {
     private Queue queue; //application中创建的
 
     @Autowired
-    private JmsMessagingTemplate jmsTemplate; //用来发送消息到broker的对象
+    JmsMessagingTemplate jmsTemplate; //用来发送消息到broker的对象
 
     //发送消息，destination是发送到的队列，message是待发送的消息
     @Override
