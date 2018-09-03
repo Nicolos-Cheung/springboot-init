@@ -8,11 +8,13 @@
  * Mybatis
  * Redis
  * ActiveMQ
+ * RabbitMQ
  * Spring-Data-JPA
  * Spring-Data-Rest
  * WebFlux
  * Cache(Ehcache、Redis、Generic)
  * 热部署
+
  
  >相关文档说明详见：localhost:8080/swagger-ui.html 
  
