@@ -3,7 +3,6 @@ package com.zn.springbootdemo.jms.rabbitmq;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
@@ -12,7 +11,7 @@ import java.util.Date;
  * <p>
  * RabbitMQ发送端 （测试）
  */
-@Component
+//@Component
 public class RabbitMQSender {
 
     @Autowired

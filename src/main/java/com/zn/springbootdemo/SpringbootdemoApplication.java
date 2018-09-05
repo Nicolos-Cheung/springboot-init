@@ -11,6 +11,7 @@ import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.jms.annotation.EnableJms;
 import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
 import org.springframework.jms.config.JmsListenerContainerFactory;
@@ -33,6 +34,7 @@ import javax.jms.Topic;
 @EnableJpaRepositories(basePackages = "com.zn.springbootdemo.data") //扫描该包数据访问接口定义（jpa rest）
 @Import(RepositoryRestMvcAutoConfiguration.class) //导入默认的Spring-data-Rest配置
 @EnableCaching //开启声明式缓存支持
+@EnableMongoRepositories
 public class SpringbootdemoApplication {
 
     @Bean //非 常规写法，交给spring管理，只是为了后期测试方便直接注入该Queue对象
@@ -45,7 +47,6 @@ public class SpringbootdemoApplication {
     public Topic topic() {
         return new ActiveMQTopic("news.topic");
     }
-
 
     //需要给topic定义独立的JmsListenerContainer，否则普通queue中的消息无法被消费
     @Bean

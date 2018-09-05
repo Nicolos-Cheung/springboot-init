@@ -3,7 +3,7 @@ package com.zn.springbootdemo.controller;
 import com.zn.springbootdemo.domain.JsonData;
 import com.zn.springbootdemo.domain.User;
 import com.zn.springbootdemo.utils.JsonUtils;
-import com.zn.springbootdemo.utils.RedisClient;
+import com.zn.springbootdemo.data.redis.RedisClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

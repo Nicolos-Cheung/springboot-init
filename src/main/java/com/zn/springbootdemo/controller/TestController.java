@@ -16,9 +16,7 @@ public class TestController {
 
     @RequestMapping(path = "/")
     public String home() {
-
         return config.redis_expiration;
-
     }
 
 
